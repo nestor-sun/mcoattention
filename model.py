@@ -1,7 +1,5 @@
 import torch
 import torch.nn as nn
-from torchvision import models
-from torch import optim
 from multimodal_coattention_layer import Multimodal_Coattention
 from visual_encoder import Visual_Encoder
 
