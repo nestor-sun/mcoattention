@@ -8,7 +8,7 @@ Abstract: Video has emerged as a pervasive medium for communication, entertainme
 ## What's New
 - **[Nov 2023]:** Multimodal Co-attention Transformer for Video-Based Personality Understanding has been accepted as a regular paper.
 - **[Nov 2023]:** Code will be released soon.
-- **[Jun 2024]:** Code is released
+- **[Jun 2024]:** Code has been released
 
 ### Dependencies:
 - Python 3.10.9
