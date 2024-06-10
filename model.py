@@ -7,6 +7,7 @@ class PersonalityModel(nn.Module):
     def __init__(self, a_dim, t_dim, v_img_size, v_patch_size, heads, patch_out_d, coa_d, \
 			out_d, img_num, dropout=0.1, device='cpu'):
         super(PersonalityModel, self).__init__()
+
         # modal linear projection 
         self.proj_v = Visual_Encoder(v_img_size, v_patch_size, patch_out_d, coa_d, img_num, dropout, device)
         self.proj_a = nn.Linear(a_dim, coa_d)
@@ -35,12 +36,13 @@ class PersonalityModel(nn.Module):
 
         combined = self.coattention(combined)
         out = self.fc(combined)
-        return out
+	
+        return out.sigmoid()
 
 '''
-model = PersonalityModel(234, 768, 224, 4, 8, 2, 1024, 5, 15)
+model = PersonalityModel(234, 768, 224, 4, 8, 2, 1024, 1, 15)
 a = torch.randn(10, 234)
 t = torch.randn(10, 768)
 v = torch.randn(10, 15, 3, 224, 224)
-print(model(a,v,t).shape)
+print(model(a,v,t))
 '''
